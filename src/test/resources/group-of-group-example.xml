@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke">
+
+	<test name="FastSmoke">
+		<parameter name="login" value="user" />
+		<parameter name="pass" value="user123" />
+		<groups>
+
+			<define name="functest">
+				<include name="chrome.*" />
+			</define>
+
+			<define name="functest2">
+				<include name="ie.*" />
+			</define>
+
+			<define name="all">
+				<include name="chrome.*" />
+				<include name="firefox.*" />
+				<include name="ie.*" />
+			</define>
+			<run>
+				<!-- <include name="functest" /> 
+				<include name="functest2" /> -->
+				<include name="all"/>
+			</run>
+		</groups>
+		<packages>
+			<package name="by.htp.test.*" />
+		</packages>
+	</test>
+	
+	<!--  <test name="ParametersTest">
+		<parameter name="login" value="admin" />
+		<parameter name="pass" value="admin123" />
+		<parameter name="intVal" value="56" />
+		<classes>
+			<class name="by.htp.test.simple.SimpleGroupTestMaskExample" />
+		</classes>
+	</test>
+	-->
+</suite>
+
+

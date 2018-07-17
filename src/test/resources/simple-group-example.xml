@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="SimpleGroupExample">
+	<test name="Test1">
+		<groups>
+			<run>
+				<include name="complex" />
+			</run>
+		</groups>
+		<classes>
+			<class name="by.htp.test.simple.SimpleGroupTestExample" />
+			
+		</classes>
+	</test>
+
+	<test name="Test2">
+		<groups>
+			<run>
+				<include name="simple" />
+			</run>
+		</groups>
+		
+		<packages>
+			<package name="by.htp.test.simple.*"/>
+		</packages>
+	<!--  	
+		<classes>
+			<class name="by.htp.test.simple.SimpleGroupTestExample" />
+			<class name="by.htp.test.simple.SimpleTestNGExample" />
+		</classes>
+	-->
+	</test>
+</suite>
+
